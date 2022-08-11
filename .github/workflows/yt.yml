@@ -4,43 +4,18 @@ on:
    workflow_dispatch:
    
 jobs:
-  build:
-    runs-on: windows-latest
-    strategy:
-      max-parallel: 50
-      fail-fast: false
-      matrix:
-        go: [1.1, 1.2]
-        flag: [1, 2, 3]
-    timeout-minutes: 360
-    env:
-        NUM_JOBS: 50
-        JOB: ${{ matrix.go }}
-    steps:
-    - name: Set up Go ${{ matrix.go }}
-      uses: actions/setup-go@v1
-  deploy:
-    name: X-code
-    runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 50
-      fail-fast: false
-      matrix:
-        go: [1.1, 1.2]
-        flag: [A, B, C, D]
-    timeout-minutes: 360
-    env:
-        NUM_JOBS: 50
-        JOB: ${{ matrix.go }}
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Go ${{ matrix.go }}
-      uses: actions/setup-go@v1
-      with:
-        go-version: ${{ matrix.go }}
-      id: go
-    - name: Play YT
-      run: |
-        start-process "C:\Program Files\Google\Chrome\Application\chrome.exe" "https://www.youtube.com/watch?v=ie2b9riLssQ&list=PL1CKpJPRBDSQ3mJylAT7Cg26rHvRJW3PL"
-    - name: checking the
-      run: .\timeout.ps1
+   first_windo_machine:
+      name: First window machine
+      runs-on: windows-latest
+      strategy:
+       fail-fast: false
+       matrix:
+         runner: [0]
+
+      steps:
+       - uses: actions/checkout@v2
+       - name: Open YT
+         run: |
+           start-process "C:\Program Files\Google\Chrome\Application\chrome.exe" "https://www.youtube.com/watch?v=ie2b9riLssQ&list=PL1CKpJPRBDSQ3mJylAT7Cg26rHvRJW3PL"
+       - name: YT time
+         run: .\timeout.ps1
