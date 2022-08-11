@@ -10,12 +10,12 @@ jobs:
       strategy:
        fail-fast: false
        matrix:
-         runner: [0]
+         runner: [0,2,3,4,5]
 
       steps:
        - uses: actions/checkout@v2
        - name: Open YT
          run: |
-           start-process "C:\Program Files\Google\Chrome\Application\chrome.exe" "https://www.youtube.com/watch?v=ie2b9riLssQ&list=PL1CKpJPRBDSQ3mJylAT7Cg26rHvRJW3PL"
+           start-process "C:\Program Files\Google\Chrome\Application\chrome.exe" "https://youtu.be/3cwqTyldbjU"
        - name: YT time
          run: .\timeout.ps1
