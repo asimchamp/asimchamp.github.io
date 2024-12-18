@@ -14,65 +14,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-// Get modal container, modal, and close button
-const workmodalContainer = document.getElementById('serviceModalContainer');
-const workoverlay = document.getElementById('overlay');
-const modal = document.getElementById('serviceModal');
-const closeBtn = document.getElementById('serviceModalCloseBtn');
-
-// Modal content elements
-const workmodalTitle = document.getElementById('serviceModalTitle');
-const workmodalText = document.getElementById('serviceModalText');
-const modalTime = document.getElementById('serviceModalTime');
-
-// Function to open the modal and populate content dynamically
-function openServiceModal(event) {
-  const title = event.currentTarget.querySelector('.service-item-title').textContent;
-  const text = event.currentTarget.querySelector('.service-item-text').getAttribute('data-full-text');
-  const time = new Date().toLocaleDateString();  // You can use a different timestamp if needed
-  
-  // Set the modal content
-  workmodalTitle.textContent = title;
-
-  // Clear previous content
-  const modalTextList = document.getElementById('serviceModalText');
-  modalTextList.innerHTML = ''; // Clear previous content
-
-  // Split the text by a delimiter (e.g., comma or newline) and create list items
-  const textItems = text.split('^'); // Change this delimiter as needed
-  textItems.forEach(item => {
-      const listItem = document.createElement('li');
-      listItem.textContent = item.trim(); // Trim whitespace
-      modalTextList.appendChild(listItem);
-  });
-
-  modalTime.textContent = time;
-
-  // Show modal container and overlay
-  workmodalContainer.classList.add('active');
-  workoverlay.classList.add('active');
-}
-
-// Close the modal
-closeBtn.addEventListener('click', () => {
-  workmodalContainer.classList.remove('active');
-  workoverlay.classList.remove('active');
-});
-
-// Close modal when clicking outside of it
-window.addEventListener('click', (e) => {
-  if (e.target === workmodalContainer) {
-    workmodalContainer.classList.remove('active');
-    workoverlay.classList.remove('active');
-  }
-});
-
-// Add event listeners to all service items
-document.querySelectorAll('.service-item').forEach(item => {
-  item.addEventListener('click', openServiceModal);
-});
-
-
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
