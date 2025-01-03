@@ -1819,16 +1819,18 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .usecase-modal-img-wrapper {
   background: var(--bg-gradient-onyx);
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
 .modal-usecase-icon {
-  font-size: 28px;
+  font-size: 48px;
   color: var(--orange-yellow-crayola);
 }
 
@@ -1915,12 +1917,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .usecase-modal-img-wrapper {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
 
   .modal-usecase-icon {
-    font-size: 36px;
+    font-size: 56px;
   }
 
   .usecase-modal-title {
@@ -2217,5 +2219,315 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .search-input {
     padding-left: 45px;
+  }
+}
+
+/* Update modal query section styling */
+.modal-query-wrapper {
+  background: var(--onyx);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.query-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-query {
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 6px;
+  padding: 12px;
+  color: var(--light-gray);
+  font-family: 'Consolas', monospace;
+  font-size: var(--fs-7);
+  line-height: 1.6;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--eerie-black-2);
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  border: 1px solid var(--jet);
+}
+
+.copy-btn:hover {
+  background: var(--jet);
+  color: var(--white-2);
+}
+
+.copy-btn ion-icon {
+  font-size: 16px;
+}
+
+.copy-btn.copied {
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+}
+
+/* Add scrollbar styling for the query box */
+.modal-query::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-query::-webkit-scrollbar-track {
+  background: var(--eerie-black-1);
+  border-radius: 4px;
+}
+
+.modal-query::-webkit-scrollbar-thumb {
+  background: var(--jet);
+  border-radius: 4px;
+}
+
+.modal-query::-webkit-scrollbar-thumb:hover {
+  background: var(--light-gray-70);
+}
+
+/* Media query adjustments */
+@media (min-width: 768px) {
+  .modal-query {
+    font-size: var(--fs-6);
+    padding: 15px;
+  }
+
+  .copy-btn {
+    font-size: var(--fs-6);
+    padding: 8px 15px;
+  }
+}
+
+/* Update modal content and query wrapper styling */
+.modal-content {
+  padding: 20px;
+  max-width: 100%;
+}
+
+.modal-text-content,
+.modal-query-wrapper {
+  margin: 20px 15px;
+  background: var(--onyx);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.modal-query-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.modal-header {
+  padding: 0 15px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.modal-title-section {
+  flex: 1;
+}
+
+.modal-title {
+  color: var(--white-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  margin-bottom: 12px;
+}
+
+.modal-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+}
+
+.modal-query-wrapper {
+  background: var(--onyx);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0 15px 20px;
+  position: relative;
+  border: 1px solid var(--jet);
+}
+
+/* Media query adjustments */
+@media (min-width: 768px) {
+  .modal-header {
+    padding: 0 20px 25px;
+  }
+
+  .modal-title {
+    font-size: var(--fs-2);
+  }
+
+  .modal-text {
+    font-size: var(--fs-5);
+  }
+
+  .modal-query-wrapper {
+    margin: 0 20px 25px;
+    padding: 25px;
+  }
+}
+
+/* Enhanced Modal Styling */
+.testimonials-modal.usecase-modal {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  padding: 25px;
+  max-width: 100%;
+}
+
+.modal-header {
+  padding: 0 15px 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.usecase-modal-img-wrapper {
+  background: var(--bg-gradient-onyx);
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.modal-usecase-icon {
+  font-size: 48px;
+  color: var(--orange-yellow-crayola);
+}
+
+.modal-text-content,
+.modal-query-wrapper {
+  margin: 20px 15px;
+  background: var(--onyx);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--jet);
+}
+
+.description-wrapper h4,
+.query-header h4 {
+  color: var(--white-2);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+  margin-bottom: 15px;
+}
+
+.modal-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+}
+
+.modal-query-wrapper {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--eerie-black-1);
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  border: 1px solid var(--jet);
+}
+
+.copy-btn:hover {
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+}
+
+.modal-query {
+  margin-top: 15px;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  min-height: 100px;
+  color: var(--light-gray);
+  font-family: 'Consolas', monospace;
+  font-size: var(--fs-7);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Media query adjustments */
+@media (min-width: 768px) {
+  .modal-content {
+    padding: 30px;
+  }
+
+  .modal-text-content,
+  .modal-query-wrapper {
+    margin: 25px 20px;
+    padding: 25px;
+  }
+
+  .modal-header {
+    padding: 0 20px 20px;
+  }
+
+  .usecase-modal-img-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .modal-usecase-icon {
+    font-size: 56px;
+  }
+
+  .description-wrapper h4,
+  .query-header h4 {
+    font-size: var(--fs-4);
+  }
+
+  .modal-text,
+  .modal-query {
+    font-size: var(--fs-6);
+  }
+
+  .copy-btn {
+    font-size: var(--fs-6);
+    padding: 10px 18px;
   }
 }

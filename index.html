@@ -1129,12 +1129,8 @@
           <div class="usecase-modal-img-wrapper">
             <ion-icon class="modal-usecase-icon" name="shield-outline"></ion-icon>
           </div>
-          <h3 class="h3 modal-title" data-usecase-modal-title></h3>
-        </div>
-
-        <div class="modal-text-content">
-          <div class="description-wrapper">
-            <h4 class="h4">Description</h4>
+          <div class="modal-title-section">
+            <h3 class="h3 modal-title" data-usecase-modal-title></h3>
             <p class="modal-text" data-usecase-description></p>
           </div>
         </div>
@@ -1142,11 +1138,11 @@
         <div class="modal-query-wrapper">
           <div class="query-header">
             <h4 class="h4">SPL Query</h4>
-            <button class="copy-btn" onclick="copyQuery()">
-              <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
-              Copy
-            </button>
           </div>
+          <button class="copy-btn" onclick="copyQuery()">
+            <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+            Copy
+          </button>
           <pre class="modal-query" data-usecase-modal-query></pre>
         </div>
       </div>
