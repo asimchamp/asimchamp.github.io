@@ -1,0 +1,6 @@
+title	discription	type	spl_query
+Auth Login	this use case is for admin login	Authentication	"index=spl host=ppxc | stats count by host""  "
+Auth Login2	this use case is for admin loginadshf sdkjbf	Threat	"index=spl host=ppxc | stats count by host"""
+Malware	this use case is for malware loginadshf sdkjbf	Threat	"index=spl host=ppxc | stats count by malware"""
+Phishing activity	this use case is for Phishing loginadshf sdkjbf	Phishing	"index=spl host=ppxc | stats count by malware"""
+Email	this use case is for Phishing loginadshf sdkjbf	endpoint	index=spl host=ppxc | stats count by email
