@@ -216,6 +216,11 @@ const usecaseModalContainer = document.querySelector("[data-usecase-modal-contai
 const usecaseModalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const usecaseOverlay = document.querySelector("[data-usecase-overlay]");
 
+// Function to format SPL query with line breaks before pipes
+function formatSplQuery(query) {
+  return query.replace(/\|/g, '\n|');
+}
+
 // Function to open modal
 function openUsecaseModal(useCase, iconName) {
   console.log('Opening modal for:', useCase); // Debug log
@@ -228,7 +233,7 @@ function openUsecaseModal(useCase, iconName) {
   if (modalTitle) modalTitle.textContent = useCase.title;
   if (modalDescription) modalDescription.textContent = useCase.description;
   if (modalIcon) modalIcon.setAttribute('name', iconName);
-  if (modalQuery) modalQuery.textContent = useCase.spl_query;
+  if (modalQuery) modalQuery.textContent = formatSplQuery(useCase.spl_query);
   
   // Add active class to modal container and overlay
   document.querySelector("[data-usecase-modal-container]").classList.add("active");
@@ -326,10 +331,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Add copy functionality for SPL query
+// Update the copyQuery function to preserve formatting
 function copyQuery() {
   const queryText = document.querySelector('[data-usecase-modal-query]').textContent;
-  navigator.clipboard.writeText(queryText).then(() => {
+  // Remove the line breaks when copying to clipboard
+  const cleanQuery = queryText.replace(/\n\|/g, ' |');
+  navigator.clipboard.writeText(cleanQuery).then(() => {
     const copyBtn = document.querySelector('.copy-btn');
     copyBtn.innerHTML = '<ion-icon name="checkmark-outline" class="copy-icon"></ion-icon> Copied!';
     setTimeout(() => {

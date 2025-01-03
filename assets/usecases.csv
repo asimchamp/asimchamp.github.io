@@ -1,6 +1,7 @@
 title	discription	type	spl_query
-Auth Login	this use case is for admin login	Authentication	"index=spl host=ppxc | stats count by host""  "
-Auth Login2	this use case is for admin loginadshf sdkjbf	Threat	"index=spl host=ppxc | stats count by host"""
-Malware	this use case is for malware loginadshf sdkjbf	Threat	"index=spl host=ppxc | stats count by malware"""
-Phishing activity	this use case is for Phishing loginadshf sdkjbf	Phishing	"index=spl host=ppxc | stats count by malware"""
-Email	this use case is for Phishing loginadshf sdkjbf	endpoint	index=spl host=ppxc | stats count by email
+Auth Login	this use case is for admin login	Authentication	index=spl host=ppxc | stats count by host
+Auth Login2	this use case is for admin loginadshf sdkjbf	Threat	index=spl host=ppxc | stats count by host
+Malware	this use case is for malware loginadshf sdkjbf	Threat	index=spl host=ppxc | stats count by malware
+Phishing activity	this use case is for Phishing loginadshf sdkjbf	Phishing	index=spl host=ppxc | stats count by malware
+Email	this use case is for Phishing loginadshf sdkjbf	Endpoint	index=spl host=ppxc | stats count by email
+Monitor Skipped Searches	This use case is for Monitor Skipped Searches	Health	index=_internal host=* sourcetype=scheduler (status="completed" OR status="skipped" OR status="deferred") | eval alert_actions = if(isnull(alert_actions) OR alert_actions == "", "none", alert_actions)  | stats count by status, host  | sort - count  | eventstats sum(count) AS total  | eval percent = round(count / total * 100, 2)." %"  | fields - total  | rename status as Status, app as App, user as User, savedsearch_name as "Report Name", alert_actions as "Alert Actions", count as Count, percent as Percent_of_Total  | search Status=skipped
