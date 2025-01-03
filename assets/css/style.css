@@ -85,6 +85,8 @@
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
+  --fs-9: 10px;
+  --fs-10: 9px;
 
   /* font-weight */
   --fw-300: 300;
@@ -2529,5 +2531,77 @@ textarea.form-input::-webkit-resizer { display: none; }
   .copy-btn {
     font-size: var(--fs-6);
     padding: 10px 18px;
+  }
+}
+
+/* Add gradient color variations for different types */
+.project-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: var(--fs-9);
+  font-weight: var(--fw-500);
+  white-space: nowrap;
+  color: var(--white-2);
+  background-size: 200% auto;
+  transition: 0.3s ease;
+  min-width: fit-content;
+  max-width: max-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+/* Different gradients for different types */
+.project-category[data-type="Authentication"] {
+  background-image: linear-gradient(45deg, #FF6B6B, #FFE66D);
+}
+
+.project-category[data-type="Threat"] {
+  background-image: linear-gradient(45deg, #4E65FF, #92EFFD);
+}
+
+.project-category[data-type="Malware"] {
+  background-image: linear-gradient(45deg, #FF6B6B, #FF8E53);
+}
+
+.project-category[data-type="Phishing"] {
+  background-image: linear-gradient(45deg, #6B4EFF, #B892FD);
+}
+
+.project-category[data-type="Endpoint"] {
+  background-image: linear-gradient(45deg, #45B649, #96E6A1);
+}
+
+.project-category[data-type="Health"] {
+  background-image: linear-gradient(45deg, #FA8BFF, #2BD2FF);
+}
+
+/* Hover effect */
+.project-category:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+/* Update project item content layout */
+.project-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.project-title {
+  margin-bottom: 2px;
+  font-size: var(--fs-6);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 580px) {
+  .project-category {
+    font-size: var(--fs-10);
+    padding: 2px 8px;
   }
 }

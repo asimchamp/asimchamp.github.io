@@ -283,7 +283,7 @@ async function loadUseCases() {
           
           <div class="project-item-content">
             <h3 class="project-title">${useCase.title}</h3>
-            <span class="project-category">${useCase.type}</span>
+            <span class="project-category" data-type="${useCase.type}">${useCase.type}</span>
           </div>
         </a>
       `;
